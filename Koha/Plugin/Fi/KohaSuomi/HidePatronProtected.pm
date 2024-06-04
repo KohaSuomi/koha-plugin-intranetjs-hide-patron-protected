@@ -15,14 +15,14 @@ our $VERSION = "1.0.0";
 
 ## Here is our metadata, some keys are required, some are optional
 our $metadata = {
-    name            => 'IntranetUserJS: Hide patron protected radio button',
+    name            => "IntranetUserJS: Hide patrons' protected radio buttons",
     author          => 'Lari Strand',
     date_authored   => '2024-06-04',
     date_updated    => '2024-06-04',
     minimum_version => '',
     maximum_version => '',
     version         => $VERSION,
-    description     => 'Hides patrons Protected radio buttons from non-superusers',
+    description     => "Hides patrons' Protected radio buttons from non-superlibrarians",
 };
 
 ## This is the minimum code required for a plugin's 'new' method
