@@ -19,6 +19,14 @@ mypath="$(dirname $(readlink -f $0))"
 # Make links
 ln -svfn $mypath/Koha/Plugin/Fi/KohaSuomi/* $kohaplugindir/Koha/Plugin/Fi/KohaSuomi/
 
+echo "Setting permissions for www-data"
+sudo chown -R www-data:www-data $kohaplugindir/Koha/Plugin/Fi/KohaSuomi/
+
 # Install plugins as koha
 sudo -ukoha $KOHA_PATH/misc/devel/install_plugins.pl
 
+# Get package name
+package_name=$(grep -Po '(?<=package\s).*?(?=\s*;)' $mypath/Koha/Plugin/Fi/KohaSuomi/*.pm)
+# Disable plugin
+echo "Disabling plugin $package_name"
+sudo -ukoha perl $KOHA_PATH/../koha-suomi-utility/misc/manage_plugins.pl --disable "$package_name"
