@@ -22,7 +22,7 @@ our $metadata = {
     minimum_version => '',
     maximum_version => '',
     version         => $VERSION,
-    description     => "Hides patrons' Protected radio buttons from non-superlibrarians",
+    description     => "Hides patrons' Protected radio buttons from non-superlibrarians. (Paikalliskannat)",
 };
 
 ## This is the minimum code required for a plugin's 'new' method
